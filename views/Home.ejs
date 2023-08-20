@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title%></title>
+    <link rel="stylesheet" href="/home.css">
+    <script src="https://kit.fontawesome.com/1ab81e80d9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <h1>TODO APP</h1>
+    <div class="form-area">
+    <!-- Form for Accepting the todo -->
+    <form id="form-todo" action="/create-todo" method="post" >
+      <p>Description <input type="textarea" name="name" placeholder="What do you need to do?"></p>
+      <p>Category <select id="Category" name="category" placeholder="Choose a Category">
+        <option value="Personal">Personal</option>
+        <option value="Work">Work</option>
+        <option value="School">School</option>
+        <option value="Other">Other</option>
+      </select>  
+      </p>
+      <p>Date <input type="date" name="date"></p>
+      <button type="submit">Add Todo</button>
+    </form>
+    <div>
+        <button id="deleteButton">Delete ToDO</button>
+    </div>
+       
+    <!-- for Displaying the todo -->
+    <div class="Todo list">
+        <ul class="ul-Style">
+            <% for(let i of todos){%>
+                
+                <li class="listStyle">
+                    <input type="checkbox" id ='checkbox' name="eachtodo" value="<%=i._id%>">
+                    <p class="name"><%=i.name%></p> 
+                    <p class="category" > <%=i.category%></p>
+                    <p class="date"><%=i.date.toLocaleDateString("en-US",{dateStyle: "long"})%></p>
+                    
+                </li>
+           <% }%>
+            
+        </ul>
+    </div>
+    
+</div>
+    <script type="text/javascript" src="/home.js"></script>
+</body>
+</html>
