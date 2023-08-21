@@ -10,22 +10,27 @@
 <body>
     
     <h1>TODO APP</h1>
-    <div class="form-area">
-    <!-- Form for Accepting the todo -->
-    <form id="form-todo" action="/create-todo" method="post" >
-      <p>Description <input type="textarea" name="name" placeholder="What do you need to do?"></p>
-      <p>Category <select id="Category" name="category" placeholder="Choose a Category">
-        <option value="Personal">Personal</option>
-        <option value="Work">Work</option>
-        <option value="School">School</option>
-        <option value="Other">Other</option>
-      </select>  
-      </p>
-      <p>Date <input type="date" name="date"></p>
-      <button type="submit">Add Todo</button>
-    </form>
-    <div>
-        <button id="deleteButton">Delete ToDO</button>
+    <!-- //Form Container -->
+    <div class="form-container">
+        <form id="form-todo" action="/create-todo" method="post" >
+          <label for="name">Description</label>
+          <textarea id="name" name="name" placeholder="What do you need to do?"></textarea>
+    
+          <label for="category">Category</label>
+          <select id="category" name="category">
+            <option value="Personal">Personal</option>
+            <option value="Work">Work</option>
+            <option value="School">School</option>
+            <option value="Other">Other</option>
+          </select>
+    
+          <label for="date">Date</label>
+          <input type="date" id="date" name="date">
+          
+          <button type="submit">Add Todo</button>
+        </form>
+          <button id="deleteButton">Delete ToDO</button>
+        
     </div>
        
     <!-- for Displaying the todo -->

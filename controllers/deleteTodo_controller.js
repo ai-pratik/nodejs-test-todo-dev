@@ -7,7 +7,7 @@ module.exports.deleteTodo = (req, res) => {
     .then((success) => {
       console.log("Deleted successfully", success);
       // Reload the page after successful deletion
-      res.redirect("/");
+      return res.redirect("back");
     })
     .catch((err) => {
       console.log("Error:", err);
